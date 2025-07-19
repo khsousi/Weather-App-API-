@@ -24,7 +24,7 @@ users.forEach(function(user) {
 var prices = [120, 85, 300, 45, 220];
 
 let newPrices = prices.filter(function(price) {
-  if (price > 100) return price
+  if (price > 100) return true
 })
 console.log(newPrices)
 
@@ -74,7 +74,7 @@ console.log(greeting)
 var words = ["cat", "elephant", "bee", "crocodile"];
 
 let longestWord = words.find(function (word) {
-  if (word.length > 6) return word 
+  if (word.length > 6) return true 
 })
 
 console.log(longestWord)
@@ -132,7 +132,7 @@ var products = [
 ];
 
 let filterdProducts = products.filter(function(product) {
-  if (product.price < 1000) return product
+  if (product.price < 1000) return true 
 }).map(function(product) {
   return `${product.name}: $${product.price}`  
 })
@@ -219,7 +219,7 @@ console.log(calc(3)(4)("*")); // 12
 var prices = [300, 120, 50, 700, 250];
 
 const sortedArray = prices.toSorted(function(a , b) {
-  return b - a
+  return a - b
 })
 console.log(sortedArray)
 
