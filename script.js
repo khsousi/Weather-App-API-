@@ -1,4 +1,5 @@
 
+
 // Weather App  
  
 const weatherForm = document.querySelector(".weatherForm")
