@@ -10,7 +10,7 @@ const apiKey = "b0a22dfd938dded1a5fbe5def4591f42"
 weatherForm.addEventListener("submit" , async event => {
   event.preventDefault()
   const city = cityInput.value
-
+ 
   if (city) {
     try {
       const weatherData = await getWeatherData(city)
