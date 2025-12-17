@@ -12,7 +12,7 @@ weatherForm.addEventListener("submit" , async event => {
   const city = cityInput.value
  
   if (city) {
-    try {
+    try { 
       const weatherData = await getWeatherData(city)
       displayWeatherInfo(weatherData)
     } catch (error) {
