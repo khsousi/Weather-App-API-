@@ -1,5 +1,5 @@
 body{
-  background-color: hsl(0, 0%, 95%);
+  background-color: #0f172a;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
   /* padding:50px; */
@@ -18,34 +18,39 @@ body{
 .cityInput {
   width: 300px;
   padding: 10px;
-  border: 2px solid hsla(0, 0%, 20% , 0.3);
+  border: 2px solid #3b82f6;
   border-radius: 4px;
   font-weight: bold;
   font-size: 2rem;
   border-radius: 10px;
   margin: 10px;
+  background-color: #1e293b;
+  color: #f1f5f9;
 }
 
 button[type="submit"] {
   padding: 10px 20px;
   font-size: 2rem;
   font-weight: bold;
-  background-color: hsl(200, 100%, 50%);
+  background-color: #3b82f6;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: hsl(200, 100%, 40%);
+  background-color: #2563eb;
+  transform: scale(1.05);
 }
 
 .card {
-  background: linear-gradient(to bottom right, hsl(200, 100%, 90%), hsl(200, 100%, 70%));
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   padding: 50px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+  border: 1px solid #3b82f6;
+  border-radius: 15px;
   min-width: 300px;
   display: flex;
   flex-direction: column;
@@ -55,32 +60,32 @@ button[type="submit"]:hover {
 
 h1 {
   font-size: 3rem;
-  color: hsl(200, 100%, 20%);
+  color: #f1f5f9;
   margin-top: 0;
   margin-bottom: 20px;
 }
 
 p {
   font-size: 1.5rem;
-  color: hsl(200, 100%, 30%);
+  color: #cbd5e1;
   margin: 10px 0;
 }
 
 .cityDisplay , .tempDisplay {
   font-size: 3rem;
   font-weight: bold;
-  color: hsl(0, 00%, 00% , 0.8);
+  color: #f1f5f9;
 }
 
 .humidityDisplay {
   font-size: 2rem;
-  color: hsl(0, 0%, 20%);
+  color: #cbd5e1;
 }
 
 .descDisplay {
   font-style: italic;
   font-size: 1.5rem;
-  color: hsl(0, 0%, 30%);
+  color: #10b981;
 }
 
 .weatherEmoji {
@@ -89,7 +94,67 @@ p {
 }
 
 .errorDisplay {
-  color: hsl(0, 100%, 50%);
+  color: #ef4444;
   font-size: 2rem;
   margin-top: 20px;
+}
+
+/* Search container - flexbox to layout items horizontally */
+.searchContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Location button - matches submit button style */
+.geoBtn {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.geoBtn:hover {
+  background-color: #059669;
+  transform: scale(1.05);
+}
+
+/* Loading spinner animation */
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(59, 130, 246, 0.2);
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Status message styling */
+.statusMessage {
+  font-size: 1.2rem;
+  color: #3b82f6;
+  min-height: 24px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.statusMessage.error {
+  color: #ef4444;
+}
+
+.statusMessage.success {
+  color: #10b981;
 }

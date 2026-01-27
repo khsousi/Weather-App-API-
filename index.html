@@ -11,8 +11,13 @@
     <!-- weather app -->
 
     <form class="weatherForm" action="">
-      <input type="text" class="cityInput" placeholder="Enter City Name" >
-      <button type="submit">Get Weather</button>
+      <div class="searchContainer">
+        <input type="text" class="cityInput" placeholder="Enter City Name" >
+        <button type="submit">Get Weather</button>
+        <button type="button" class="geoBtn">📍 My Location</button>
+      </div>
+      <div class="loadingSpinner" style="display: none;"></div>
+      <p class="statusMessage"></p>
     </form>
 
     <div class="card" style="display: none;">
