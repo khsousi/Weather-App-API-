@@ -21,8 +21,8 @@ weatherForm.addEventListener("submit" , async event => {
       const weatherData = await getWeatherData(city)
       displayWeatherInfo(weatherData)
     } catch (error) {
-      console.log(error)
-      displayError(error)
+      console.error(error)
+      displayError(error.message)
     }  
     
   }else {
@@ -116,9 +116,6 @@ function displayError(message) {
 // ===== GEOLOCATION FUNCTIONS =====
 
 function getLocationWeather() {
-  const statusMessage = document.querySelector(".statusMessage")
-  const loadingSpinner = document.querySelector(".loadingSpinner")
-  
   statusMessage.textContent = "Getting your location..."
   loadingSpinner.style.display = "block"
   
@@ -140,9 +137,6 @@ function getLocationWeather() {
 }
 
 async function fetchWeatherByCoords(lat, lon) {
-  const statusMessage = document.querySelector(".statusMessage")
-  const loadingSpinner = document.querySelector(".loadingSpinner")
-  
   try {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
     const response = await fetch(apiUrl)
@@ -163,9 +157,6 @@ async function fetchWeatherByCoords(lat, lon) {
 }
 
 function handleGeoError(error) {
-  const statusMessage = document.querySelector(".statusMessage")
-  const loadingSpinner = document.querySelector(".loadingSpinner")
-  
   loadingSpinner.style.display = "none"
   
   switch(error.code) {
@@ -184,4 +175,3 @@ function handleGeoError(error) {
   
   statusMessage.classList.add("error")
 }
-
